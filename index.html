@@ -1,0 +1,1750 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Saúde Sexual Completa | Educação e Serviços</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&family=Open+Sans:wght@300;400;600&display=swap" rel="stylesheet">
+    <style>
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Open Sans', sans-serif;
+        }
+
+        :root {
+            --primary: #4A6572;
+            --primary-light: #708690;
+            --primary-dark: #344955;
+            --secondary: #FF8A65;
+            --secondary-light: #FFAB91;
+            --secondary-dark: #E64A19;
+            --accent: #7E57C2;
+            --accent-light: #9575CD;
+            --accent-dark: #512DA8;
+            --light: #F5F7FA;
+            --dark: #263238;
+            --success: #43A047;
+            --warning: #FFB300;
+            --info: #29B6F6;
+            --gray: #78909C;
+            --light-gray: #ECEFF1;
+            --teal-light: #E0F2F1;
+            --blue-light: #E3F2FD;
+            --orange-light: #FFF3E0;
+            --border-radius: 12px;
+            --box-shadow: 0 10px 30px rgba(0, 0, 0, 0.08);
+            --box-shadow-hover: 0 15px 35px rgba(0, 0, 0, 0.12);
+            --transition: all 0.3s ease;
+            --gradient-primary: linear-gradient(135deg, var(--primary) 0%, var(--primary-light) 100%);
+            --gradient-secondary: linear-gradient(135deg, var(--secondary) 0%, var(--secondary-light) 100%);
+        }
+
+        body {
+            background: var(--light);
+            color: var(--dark);
+            line-height: 1.6;
+            overflow-x: hidden;
+        }
+
+        h1, h2, h3, h4 {
+            font-family: 'Poppins', sans-serif;
+            font-weight: 600;
+            color: var(--dark);
+        }
+
+        header {
+            background: var(--gradient-primary);
+            color: white;
+            padding: 1rem 0;
+            box-shadow: 0 4px 20px rgba(0, 0, 0, 0.15);
+            position: sticky;
+            top: 0;
+            z-index: 1000;
+        }
+
+        .container {
+            width: 90%;
+            max-width: 1200px;
+            margin: 0 auto;
+            padding: 0 15px;
+        }
+
+        .header-content {
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+            flex-wrap: wrap;
+        }
+
+        .logo {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+        }
+
+        .logo i {
+            font-size: 2.5rem;
+            color: #fff;
+        }
+
+        .logo h1 {
+            font-size: 1.8rem;
+            font-weight: 700;
+            background: linear-gradient(to right, #fff, #e0f7fa);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        nav ul {
+            display: flex;
+            list-style: none;
+            gap: 8px;
+            flex-wrap: wrap;
+        }
+
+        nav a {
+            color: white;
+            text-decoration: none;
+            font-weight: 500;
+            padding: 10px 18px;
+            border-radius: 30px;
+            transition: var(--transition);
+            display: block;
+            font-size: 0.95rem;
+            position: relative;
+            overflow: hidden;
+        }
+
+        nav a::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: -100%;
+            width: 100%;
+            height: 100%;
+            background: rgba(255, 255, 255, 0.1);
+            transition: var(--transition);
+            z-index: -1;
+        }
+
+        nav a:hover::before, nav a.active::before {
+            left: 0;
+        }
+
+        nav a:hover, nav a.active {
+            background: rgba(255, 255, 255, 0.15);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.1);
+        }
+
+        .hero {
+            background: linear-gradient(rgba(0, 0, 0, 0.7), rgba(0, 0, 0, 0.7)), url("https://images.unsplash.com/photo-1576091160399-112ba8d25d1f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1770&q=80") no-repeat center/cover;
+            height: 500px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            text-align: center;
+            color: white;
+            margin-bottom: 60px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100px;
+            background: linear-gradient(to top, var(--light), transparent);
+            z-index: 1;
+        }
+
+        .hero-content {
+            max-width: 800px;
+            padding: 40px;
+            z-index: 2;
+        }
+
+        .hero h2 {
+            font-size: 3rem;
+            margin-bottom: 20px;
+            line-height: 1.2;
+            text-shadow: 2px 2px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero p {
+            font-size: 1.3rem;
+            margin-bottom: 35px;
+            max-width: 700px;
+            margin-left: auto;
+            margin-right: auto;
+            line-height: 1.6;
+        }
+
+        .hero-buttons {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            flex-wrap: wrap;
+        }
+
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            background: var(--accent);
+            color: white;
+            padding: 14px 32px;
+            border-radius: 50px;
+            text-decoration: none;
+            font-weight: 600;
+            transition: var(--transition);
+            border: none;
+            cursor: pointer;
+            font-size: 1.05rem;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            gap: 10px;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .btn::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(rgba(255, 255, 255, 0.1), rgba(255, 255, 255, 0.05));
+            z-index: 1;
+        }
+
+        .btn:hover {
+            background: var(--accent-light);
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .btn-secondary {
+            background: var(--secondary);
+        }
+
+        .btn-secondary:hover {
+            background: var(--secondary-light);
+        }
+
+        .btn-success {
+            background: var(--success);
+        }
+
+        .btn-success:hover {
+            background: #388E3C;
+        }
+
+        .section {
+            background: white;
+            border-radius: var(--border-radius);
+            box-shadow: var(--box-shadow);
+            padding: 45px;
+            margin-bottom: 50px;
+            transition: var(--transition);
+            position: relative;
+            overflow: hidden;
+        }
+
+        .section::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 5px;
+            height: 100%;
+            background: var(--gradient-primary);
+        }
+
+        .section:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .section h2 {
+            color: var(--primary);
+            font-size: 2.4rem;
+            margin-bottom: 30px;
+            padding-bottom: 15px;
+            border-bottom: 3px solid var(--secondary);
+            display: inline-block;
+        }
+
+        .section h3 {
+            color: var(--dark);
+            margin: 30px 0 20px;
+            font-size: 1.6rem;
+        }
+
+        .section h4 {
+            color: var(--primary);
+            margin: 25px 0 15px;
+            font-size: 1.35rem;
+        }
+
+        .section p {
+            margin-bottom: 20px;
+            font-size: 1.15rem;
+            line-height: 1.8;
+        }
+
+        .section ul, .section ol {
+            margin: 25px 0 25px 35px;
+        }
+
+        .section li {
+            margin-bottom: 12px;
+            line-height: 1.7;
+            position: relative;
+        }
+
+        .section li::before {
+            content: '•';
+            color: var(--primary);
+            font-weight: bold;
+            display: inline-block;
+            width: 1em;
+            margin-left: -1em;
+        }
+
+        .icon-box {
+            display: flex;
+            align-items: flex-start;
+            background: var(--light-gray);
+            padding: 30px;
+            border-radius: var(--border-radius);
+            margin: 25px 0;
+            gap: 25px;
+            border-left: 4px solid var(--secondary);
+            transition: var(--transition);
+        }
+
+        .icon-box:hover {
+            transform: translateX(5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .icon-box i {
+            font-size: 2.8rem;
+            color: var(--secondary);
+            min-width: 70px;
+            text-align: center;
+            margin-top: 5px;
+        }
+
+        .warning, .info-box, .success-box {
+            padding: 25px;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            border-left: 5px solid;
+            transition: var(--transition);
+        }
+
+        .warning:hover, .info-box:hover, .success-box:hover {
+            transform: translateX(5px);
+        }
+
+        .warning {
+            background: #FFF9E6;
+            border-left-color: var(--warning);
+        }
+
+        .info-box {
+            background: var(--blue-light);
+            border-left-color: var(--info);
+        }
+
+        .success-box {
+            background: var(--teal-light);
+            border-left-color: var(--success);
+        }
+
+        .disease-cards, .feature-cards, .service-cards {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            gap: 30px;
+            margin-top: 35px;
+        }
+
+        .disease-card, .feature-card, .service-card {
+            background: white;
+            border-radius: var(--border-radius);
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            border: 1px solid #eee;
+            height: 100%;
+            position: relative;
+        }
+
+        .disease-card:hover, .feature-card:hover, .service-card:hover {
+            transform: translateY(-8px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .card-header {
+            color: white;
+            padding: 25px;
+            position: relative;
+            overflow: hidden;
+            min-height: 140px;
+            display: flex;
+            flex-direction: column;
+            justify-content: flex-end;
+        }
+
+        .card-header::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background: linear-gradient(to bottom, transparent, rgba(0, 0, 0, 0.7));
+        }
+
+        .card-header h3 {
+            position: relative;
+            z-index: 2;
+            color: white;
+            margin: 0;
+        }
+
+        .hiv { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1576086213369-97a306d36557?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1160&q=80') center/cover;
+        }
+        
+        .sifilis { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1584824486539-53bb4646bdbc?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') center/cover;
+        }
+        
+        .hpv { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559757148-5c350d0d3c56?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') center/cover;
+        }
+        
+        .hepatite { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1595526114035-0d45ed16cfbf?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1170&q=80') center/cover;
+        }
+        
+        .gonorreia { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1594824476967-48c8b964273f?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=774&q=80') center/cover;
+        }
+        
+        .clamidia { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1559757175-0eb30cd8c063?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=870&q=80') center/cover;
+        }
+        
+        .herpes { 
+            background: linear-gradient(rgba(0, 0, 0, 0.5), rgba(0, 0, 0, 0.5)), url('https://images.unsplash.com/photo-1551884831-bbf3cdc6469e?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=1212&q=80') center/cover;
+        }
+
+        .card-body {
+            padding: 30px;
+        }
+
+        .card-body ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        .card-body li {
+            padding: 10px 0;
+            border-bottom: 1px solid #f0f0f0;
+            display: flex;
+            align-items: flex-start;
+            transition: var(--transition);
+        }
+
+        .card-body li:hover {
+            background: #f9f9f9;
+        }
+
+        .card-body li:last-child {
+            border-bottom: none;
+        }
+
+        .card-body li i {
+            color: var(--accent);
+            margin-right: 12px;
+            min-width: 24px;
+            margin-top: 5px;
+            font-size: 1.1rem;
+        }
+
+        .tab-container {
+            margin-top: 35px;
+        }
+
+        .tabs {
+            display: flex;
+            border-bottom: 2px solid #eee;
+            margin-bottom: 30px;
+            flex-wrap: wrap;
+        }
+
+        .tab {
+            padding: 16px 28px;
+            cursor: pointer;
+            background: #f5f5f5;
+            border-radius: 8px 8px 0 0;
+            margin-right: 8px;
+            font-weight: 600;
+            transition: var(--transition);
+            margin-bottom: 8px;
+            font-size: 1.05rem;
+            position: relative;
+        }
+
+        .tab.active {
+            background: var(--secondary);
+            color: white;
+        }
+
+        .tab-content {
+            display: none;
+            animation: fadeIn 0.5s ease;
+        }
+
+        .tab-content.active {
+            display: block;
+        }
+
+        .service-details {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 30px;
+            margin: 30px 0;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.08);
+            border-left: 4px solid var(--primary);
+            transition: var(--transition);
+        }
+
+        .service-details:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow);
+        }
+
+        .service-details h3 {
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 12px;
+            margin-bottom: 20px;
+        }
+
+        .service-details h3 i {
+            color: var(--secondary);
+            font-size: 1.8rem;
+        }
+
+        .service-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 20px 0;
+        }
+
+        .info-item {
+            display: flex;
+            align-items: flex-start;
+            gap: 15px;
+            flex: 1;
+            min-width: 250px;
+            padding: 15px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+        }
+
+        .info-item:hover {
+            transform: translateX(5px);
+        }
+
+        .info-item i {
+            color: var(--primary);
+            font-size: 1.4rem;
+            margin-top: 3px;
+        }
+
+        .process-steps {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .step {
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            padding: 25px;
+            flex: 1;
+            min-width: 220px;
+            text-align: center;
+            position: relative;
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .step:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .step-number {
+            background: var(--primary);
+            color: white;
+            width: 45px;
+            height: 45px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            margin: 0 auto 20px;
+            font-weight: bold;
+            font-size: 1.2rem;
+            box-shadow: 0 5px 15px rgba(74, 101, 114, 0.3);
+        }
+
+        .step h4 {
+            color: var(--primary);
+            margin-bottom: 15px;
+        }
+
+        .location-map {
+            height: 350px;
+            background: #eee;
+            border-radius: var(--border-radius);
+            margin: 30px 0;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            background: #f5f5f5;
+            border: 1px solid #ddd;
+            overflow: hidden;
+            box-shadow: var(--box-shadow);
+        }
+
+        .location-map iframe {
+            width: 100%;
+            height: 100%;
+            border: none;
+            border-radius: var(--border-radius);
+        }
+
+        .contact-info {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 25px 0;
+        }
+
+        .contact-item {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            padding: 20px;
+            flex: 1;
+            min-width: 250px;
+            background: var(--light-gray);
+            border-radius: var(--border-radius);
+            transition: var(--transition);
+            box-shadow: var(--box-shadow);
+        }
+
+        .contact-item:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .contact-item i {
+            font-size: 1.8rem;
+            color: var(--primary);
+        }
+
+        .footer {
+            background: var(--dark);
+            color: white;
+            padding: 60px 0 25px;
+            margin-top: 70px;
+            position: relative;
+        }
+
+        .footer::before {
+            content: '';
+            position: absolute;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 5px;
+            background: var(--gradient-primary);
+        }
+
+        .footer-content {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+            gap: 40px;
+            margin-bottom: 50px;
+        }
+
+        .footer-column h3 {
+            color: var(--secondary-light);
+            margin-bottom: 30px;
+            font-size: 1.5rem;
+            position: relative;
+            padding-bottom: 15px;
+        }
+
+        .footer-column h3::after {
+            content: '';
+            position: absolute;
+            bottom: 0;
+            left: 0;
+            width: 50px;
+            height: 3px;
+            background: var(--primary-light);
+        }
+
+        .footer-column ul {
+            list-style: none;
+        }
+
+        .footer-column ul li {
+            margin-bottom: 15px;
+            transition: var(--transition);
+        }
+
+        .footer-column ul li:hover {
+            transform: translateX(5px);
+        }
+
+        .footer-column ul li a {
+            color: #ddd;
+            text-decoration: none;
+            transition: var(--transition);
+            display: block;
+            padding: 5px 0;
+        }
+
+        .footer-column ul li a:hover {
+            color: var(--secondary-light);
+            padding-left: 8px;
+        }
+
+        .copyright {
+            text-align: center;
+            padding-top: 30px;
+            border-top: 1px solid #444;
+            color: #aaa;
+            font-size: 0.95rem;
+        }
+
+        .scroll-top {
+            position: fixed;
+            bottom: 40px;
+            right: 40px;
+            background: var(--gradient-primary);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+            box-shadow: var(--box-shadow);
+            transition: var(--transition);
+            z-index: 999;
+            opacity: 0;
+            transform: translateY(20px);
+        }
+
+        .scroll-top.show {
+            opacity: 1;
+            transform: translateY(0);
+        }
+
+        .scroll-top:hover {
+            background: var(--gradient-secondary);
+            transform: translateY(-5px) scale(1.05);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .disease-stats {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 25px;
+            margin: 30px 0;
+        }
+
+        .stat-card {
+            background: white;
+            border-radius: var(--border-radius);
+            padding: 25px;
+            flex: 1;
+            min-width: 220px;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+            transition: var(--transition);
+        }
+
+        .stat-card:hover {
+            transform: translateY(-5px);
+            box-shadow: var(--box-shadow-hover);
+        }
+
+        .stat-card i {
+            font-size: 2.8rem;
+            margin-bottom: 20px;
+            display: block;
+        }
+
+        .stat-card .number {
+            font-size: 2.4rem;
+            font-weight: 700;
+            margin-bottom: 10px;
+            background: var(--gradient-primary);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+        }
+
+        .stat-card .label {
+            color: var(--gray);
+            font-size: 1rem;
+        }
+
+        .myth-truth-section {
+            background: var(--orange-light);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            margin: 35px 0;
+            box-shadow: var(--box-shadow);
+        }
+
+        .myth-truth-item {
+            margin: 25px 0;
+            padding: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            border-left: 5px solid var(--accent);
+            transition: var(--transition);
+            box-shadow: 0 5px 15px rgba(0, 0, 0, 0.05);
+        }
+
+        .myth-truth-item:hover {
+            transform: translateX(5px);
+        }
+
+        .truth {
+            border-left: 5px solid var(--success);
+        }
+
+        .quiz-container {
+            background: var(--blue-light);
+            padding: 35px;
+            border-radius: var(--border-radius);
+            margin-top: 35px;
+            box-shadow: var(--box-shadow);
+        }
+
+        .quiz-question {
+            margin-bottom: 30px;
+            padding-bottom: 25px;
+            border-bottom: 1px dashed #ccc;
+        }
+
+        .options {
+            margin: 20px 0;
+        }
+
+        .option {
+            margin: 12px 0;
+            padding: 15px 20px;
+            background: white;
+            border-radius: var(--border-radius);
+            cursor: pointer;
+            transition: var(--transition);
+            border: 2px solid transparent;
+            box-shadow: 0 3px 10px rgba(0, 0, 0, 0.05);
+        }
+
+        .option:hover {
+            background: #f0f0f0;
+            transform: translateX(5px);
+        }
+
+        .option.selected {
+            border-color: var(--primary);
+            background: rgba(74, 101, 114, 0.1);
+        }
+
+        .quiz-result {
+            margin-top: 35px;
+            padding: 25px;
+            background: white;
+            border-radius: var(--border-radius);
+            display: none;
+            box-shadow: var(--box-shadow);
+            text-align: center;
+        }
+
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(20px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+
+        @media (max-width: 768px) {
+            .header-content {
+                flex-direction: column;
+                text-align: center;
+                gap: 25px;
+            }
+            
+            .hero h2 {
+                font-size: 2.4rem;
+            }
+            
+            .hero-buttons {
+                flex-direction: column;
+                align-items: center;
+            }
+            
+            .disease-cards, .feature-cards, .service-cards, .process-steps {
+                grid-template-columns: 1fr;
+            }
+            
+            .tabs {
+                flex-wrap: wrap;
+            }
+            
+            .section {
+                padding: 30px 20px;
+            }
+            
+            .hero {
+                height: 450px;
+            }
+            
+            nav ul {
+                justify-content: center;
+            }
+            
+            .section h2 {
+                font-size: 2rem;
+            }
+            
+            .card-header {
+                min-height: 120px;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Header -->
+    <header>
+        <div class="container">
+            <div class="header-content">
+                <div class="logo">
+                    <i class="fas fa-heartbeat"></i>
+                    <h1>Saúde Sexual</h1>
+                </div>
+                <nav>
+                    <ul>
+                        <li><a href="#" onclick="showTab('sexo')">Relação Sexual</a></li>
+                        <li><a href="#" onclick="showTab('cuidados')">Cuidados</a></li>
+                        <li><a href="#" class="active" onclick="showTab('doencas')">Doenças</a></li>
+                        <li><a href="#" onclick="showTab('servicos')">Serviços de Saúde</a></li>
+                        <li><a href="#" onclick="showTab('prep')">PrEP em NH</a></li>
+                        <li><a href="#" onclick="showTab('mitos')">Mitos & Verdades</a></li>
+                        <li><a href="#" onclick="showTab('quiz')">Quiz</a></li>
+                    </ul>
+                </nav>
+            </div>
+        </div>
+    </header>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="hero-content">
+            <h2>Educação e Serviços de Saúde Sexual</h2>
+            <p>Informações essenciais e recursos locais para uma vida sexual saudável, segura e responsável</p>
+            <div class="hero-buttons">
+                <a href="#" class="btn" onclick="showTab('servicos')"><i class="fas fa-clinic-medical"></i> Serviços de Saúde</a>
+                <a href="#" class="btn btn-secondary" onclick="showTab('prep')"><i class="fas fa-pills"></i> PrEP em Novo Hamburgo</a>
+            </div>
+        </div>
+    </section>
+
+    <!-- Main Content -->
+    <div class="container">
+        <!-- Relação Sexual -->
+        <section id="sexo" class="section tab-content">
+            <h2>Compreendendo a Relação Sexual</h2>
+            
+            <p>A relação sexual é uma expressão natural da sexualidade humana que envolve intimidade física e emocional entre pessoas. É uma experiência complexa que combina aspectos biológicos, psicológicos e sociais.</p>
+            
+            <div class="icon-box">
+                <i class="fas fa-brain"></i>
+                <div>
+                    <h3>O Aspecto Biológico</h3>
+                    <p>Fisiologicamente, a relação sexual envolve uma série de respostas corporais conhecidas como ciclo de resposta sexual, que inclui as fases de excitação, platô, orgasmo e resolução. Este processo envolve mudanças no sistema cardiovascular, muscular e endócrino.</p>
+                </div>
+            </div>
+            
+            <div class="icon-box">
+                <i class="fas fa-heart"></i>
+                <div>
+                    <h3>O Aspecto Emocional</h3>
+                    <p>A sexualidade humana não se limita à reprodução. Ela está profundamente ligada à expressão de afeto, intimidade emocional, prazer e conexão entre parceiros. Uma relação sexual saudável envolve respeito mútuo, comunicação aberta e consentimento explícito.</p>
+                </div>
+            </div>
+            
+            <h3>Tipos de Relações Sexuais</h3>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Relação Vaginal</div>
+                    <div class="card-body">
+                        <p>Penetração do pênis na vagina. Pode levar à gravidez se não houver proteção adequada.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Relação Anal</div>
+                    <div class="card-body">
+                        <p>Penetração do pênis no ânus. Exige cuidados especiais de higiene e proteção.</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Sexo Oral</div>
+                    <div class="card-body">
+                        <p>Estimulação dos órgãos genitais com a boca e língua. Também requer proteção contra ISTs.</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h3><i class="fas fa-exclamation-triangle"></i> Consentimento é Fundamental!</h3>
+                <p>Toda relação sexual deve ser consensual, ou seja, todas as pessoas envolvidas devem concordar livremente com a atividade sexual. O consentimento deve ser:</p>
+                <ul>
+                    <li>Explícito e verbalizado</li>
+                    <li>Entusiástico (não apenas a ausência de "não")</li>
+                    <li>Contínuo durante toda a relação</li>
+                    <li>Reversível a qualquer momento</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- Cuidados -->
+        <section id="cuidados" class="section tab-content">
+            <h2>Cuidados Essenciais na Vida Sexual</h2>
+            
+            <p>Manter uma vida sexual saudável envolve diversos cuidados que protegem a saúde física e emocional de todos os envolvidos. Conheça as práticas essenciais:</p>
+            
+            <div class="icon-box">
+                <i class="fas fa-shield-alt"></i>
+                <div>
+                    <h3>Preservativos: Proteção Dupla</h3>
+                    <p>O preservativo (camisinha) é o método mais eficaz para prevenir doenças sexualmente transmissíveis (ISTs) e gravidez indesejada. Existem duas versões:</p>
+                    <ul>
+                        <li><strong>Masculino:</strong> Feito de látex ou poliuretano, colocado no pênis ereto</li>
+                        <li><strong>Feminino:</strong> Bolsa de poliuretano inserida na vagina antes da relação</li>
+                    </ul>
+                </div>
+            </div>
+            
+            <h3>Passo a Passo para Uso Correto</h3>
+            <div class="feature-cards">
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Passo 1</div>
+                    <div class="card-body">
+                        <p>Verifique a data de validade e se a embalagem está intacta</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Passo 2</div>
+                    <div class="card-body">
+                        <p>Abra com cuidado, evitando usar objetos cortantes</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Passo 3</div>
+                    <div class="card-body">
+                        <p>Coloque antes de qualquer contato genital</p>
+                    </div>
+                </div>
+                <div class="feature-card">
+                    <div class="card-header" style="background: var(--primary)">Passo 4</div>
+                    <div class="card-body">
+                        <p>Retire com cuidado após a relação, evitando vazamentos</p>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="icon-box">
+                <i class="fas fa-comments"></i>
+                <div>
+                    <h3>Comunicação e Respeito</h3>
+                    <p>Conversar abertamente com o parceiro(a) sobre limites, preferências e saúde sexual é fundamental. Estabelecer confiança e respeito mútuo cria um ambiente seguro para ambos.</p>
+                </div>
+            </div>
+            
+            <h3>Outros Cuidados Importantes</h3>
+            <ul>
+                <li><strong>Higiene íntima:</strong> Mantenha uma higiene adequada antes e depois das relações</li>
+                <li><strong>Exames periódicos:</strong> Faça check-ups regulares de saúde sexual</li>
+                <li><strong>Vacinação:</strong> Mantenha vacinas como HPV e Hepatite B em dia</li>
+                <li><strong>Contracepção combinada:</strong> Use preservativo junto com outros métodos contraceptivos para maior segurança</li>
+            </ul>
+        </section>
+
+        <!-- Doenças -->
+        <section id="doencas" class="section tab-content active">
+            <h2>Infecções Sexualmente Transmissíveis (ISTs)</h2>
+            
+            <p>As Infecções Sexualmente Transmissíveis são causadas por vírus, bactérias ou outros microrganismos transmitidos principalmente por contato sexual sem proteção. Conheça as principais:</p>
+            
+            <div class="disease-stats">
+                <div class="stat-card">
+                    <i class="fas fa-virus" style="color: var(--accent)"></i>
+                    <div class="number">+1 milhão</div>
+                    <div class="label">Novos casos de ISTs por dia no mundo</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-syringe" style="color: var(--secondary)"></i>
+                    <div class="number">90%</div>
+                    <div class="label">Prevenível com uso correto de preservativos</div>
+                </div>
+                <div class="stat-card">
+                    <i class="fas fa-hospital" style="color: var(--success)"></i>
+                    <div class="number">70%</div>
+                    <div class="label">São assintomáticas no início</div>
+                </div>
+            </div>
+            
+            <div class="disease-cards">
+                <!-- HIV/AIDS -->
+                <div class="disease-card">
+                    <div class="card-header hiv">
+                        <h3>HIV/AIDS</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-virus"></i> <strong>Causa:</strong> Vírus da Imunodeficiência Humana</li>
+                            <li><i class="fas fa-exclamation-circle"></i> <strong>Sintomas iniciais:</strong> Febre, dor de garganta, ínguas</li>
+                            <li><i class="fas fa-lungs-virus"></i> <strong>Sintomas avançados:</strong> Infecções oportunistas, perda de peso</li>
+                            <li><i class="fas fa-shield-virus"></i> <strong>Prevenção:</strong> Preservativos, PrEP, PEP</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Sífilis -->
+                <div class="disease-card">
+                    <div class="card-header sifilis">
+                        <h3>Sífilis</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-bacteria"></i> <strong>Causa:</strong> Bactéria Treponema pallidum</li>
+                            <li><i class="fas fa-dot-circle"></i> <strong>Estágio 1:</strong> Úlcera indolor (cancro)</li>
+                            <li><i class="fas fa-raspberry"></i> <strong>Estágio 2:</strong> Manchas na pele, febre</li>
+                            <li><i class="fas fa-brain"></i> <strong>Estágio 3:</strong> Danos neurológicos e cardíacos</li>
+                            <li><i class="fas fa-shield-alt"></i> <strong>Prevenção:</strong> Preservativos e diagnóstico precoce</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- HPV -->
+                <div class="disease-card">
+                    <div class="card-header hpv">
+                        <h3>HPV</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-viruses"></i> <strong>Causa:</strong> Papilomavírus Humano</li>
+                            <li><i class="fas fa-dot-circle"></i> <strong>Sintomas:</strong> Verrugas genitais, pode ser assintomático</li>
+                            <li><i class="fas fa-female"></i> <strong>Riscos:</strong> Câncer de colo do útero, anal, garganta</li>
+                            <li><i class="fas fa-syringe"></i> <strong>Prevenção:</strong> Vacina, preservativos, exames ginecológicos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Hepatite B -->
+                <div class="disease-card">
+                    <div class="card-header hepatite">
+                        <h3>Hepatite B</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-virus"></i> <strong>Causa:</strong> Vírus da Hepatite B (VHB)</li>
+                            <li><i class="fas fa-liver"></i> <strong>Sintomas:</strong> Fadiga, icterícia, dor abdominal</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Complicações:</strong> Cirrose, câncer de fígado</li>
+                            <li><i class="fas fa-syringe"></i> <strong>Prevenção:</strong> Vacina disponível, preservativos</li>
+                            <li><i class="fas fa-history"></i> <strong>Tratamento:</strong> Antivirais, controle da doença</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Gonorreia -->
+                <div class="disease-card">
+                    <div class="card-header gonorreia">
+                        <h3>Gonorreia</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-bacteria"></i> <strong>Causa:</strong> Bactéria Neisseria gonorrhoeae</li>
+                            <li><i class="fas fa-toilet"></i> <strong>Sintomas:</strong> Corrimento, dor ao urinar</li>
+                            <li><i class="fas fa-female"></i> <strong>Riscos:</strong> Doença inflamatória pélvica, infertilidade</li>
+                            <li><i class="fas fa-baby"></i> <strong>Transmissão vertical:</strong> Pode afetar recém-nascidos</li>
+                            <li><i class="fas fa-prescription-bottle-alt"></i> <strong>Tratamento:</strong> Antibióticos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Clamídia -->
+                <div class="disease-card">
+                    <div class="card-header clamidia">
+                        <h3>Clamídia</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-bacterium"></i> <strong>Causa:</strong> Bactéria Chlamydia trachomatis</li>
+                            <li><i class="fas fa-eye"></i> <strong>Sintomas:</strong> Frequentemente assintomática</li>
+                            <li><i class="fas fa-exclamation-triangle"></i> <strong>Complicações:</strong> Infertilidade, dor pélvica crônica</li>
+                            <li><i class="fas fa-baby"></i> <strong>Transmissão vertical:</strong> Conjuntivite e pneumonia em recém-nascidos</li>
+                            <li><i class="fas fa-pills"></i> <strong>Tratamento:</strong> Antibióticos</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <!-- Herpes Genital -->
+                <div class="disease-card">
+                    <div class="card-header herpes">
+                        <h3>Herpes Genital</h3>
+                    </div>
+                    <div class="card-body">
+                        <ul>
+                            <li><i class="fas fa-virus"></i> <strong>Causa:</strong> Vírus Herpes Simplex (HSV-2)</li>
+                            <li><i class="fas fa-bolt"></i> <strong>Sintomas:</strong> Bolhas dolorosas, úlceras genitais</li>
+                            <li><i class="fas fa-redo"></i> <strong>Recorrência:</strong> Crises periódicas ao longo da vida</li>
+                            <li><i class="fas fa-baby"></i> <strong>Transmissão vertical:</strong> Risco durante parto</li>
+                            <li><i class="fas fa-capsules"></i> <strong>Tratamento:</strong> Antivirais para controle</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <div class="warning">
+                <h3><i class="fas fa-skull-crossbones"></i> Consequências das ISTs sem Tratamento</h3>
+                <p>Quando não diagnosticadas e tratadas adequadamente, as ISTs podem levar a complicações graves:</p>
+                <ul>
+                    <li>Infertilidade masculina e feminina</li>
+                    <li>Complicações na gravidez e parto</li>
+                    <li>Maior risco de transmissão de HIV</li>
+                    <li>Cânceres (colo do útero, ânus, pênis, garganta, fígado)</li>
+                    <li>Doenças cardiovasculares e neurológicas</li>
+                    <li>Morte (em casos extremos)</li>
+                </ul>
+            </div>
+            
+            <h3>Prevenção: Proteja-se!</h3>
+            <div class="icon-box">
+                <i class="fas fa-shield-virus"></i>
+                <div>
+                    <ul>
+                        <li><strong>Use preservativo</strong> em todas as relações sexuais</li>
+                        <li><strong>Faça testagem regular</strong> para ISTs</li>
+                        <li><strong>Vacine-se</strong> contra o HPV e Hepatite B</li>
+                        <li><strong>Converse com parceiros</strong> sobre saúde sexual</li>
+                        <li><strong>Evite relações sexuais</strong> sob efeito de drogas ou álcool</li>
+                        <li><strong>Tratamento precoce</strong> previne complicações</li>
+                    </ul>
+                </div>
+            </div>
+        </section>
+
+        <!-- Serviços de Saúde -->
+        <section id="servicos" class="section tab-content">
+            <h2>Serviços de Saúde e Testagem</h2>
+            
+            <p>Conheça os recursos disponíveis para cuidar da sua saúde sexual e onde realizar exames e aconselhamento.</p>
+            
+            <div class="info-box">
+                <h3><i class="fas fa-info-circle"></i> Importante!</h3>
+                <p>Todos os serviços listados são gratuitos e sigilosos. Você tem direito à saúde sexual de qualidade, независимо от sua situação financeira.</p>
+            </div>
+            
+            <h3>Onde Obter Serviços de Saúde Sexual</h3>
+            
+            <div class="service-cards">
+                <div class="service-card">
+                    <div class="card-header" style="background: var(--secondary)">
+                        <h3><i class="fas fa-clinic-medical"></i> Centros de Testagem e Aconselhamento (CTA)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Locais especializados em oferecer:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Testes rápidos para ISTs</li>
+                            <li><i class="fas fa-check"></i> Aconselhamento pré e pós-teste</li>
+                            <li><i class="fas fa-check"></i> Distribuição de preservativos</li>
+                            <li><i class="fas fa-check"></i> Encaminhamento para tratamento</li>
+                        </ul>
+                    </div>
+                </div>
+                
+                <div class="service-card">
+                    <div class="card-header" style="background: var(--success)">
+                        <h3><i class="fas fa-hospital"></i> Unidades Básicas de Saúde (UBS)</h3>
+                    </div>
+                    <div class="card-body">
+                        <p>Serviços oferecidos na maioria das UBS:</p>
+                        <ul>
+                            <li><i class="fas fa-check"></i> Distribuição gratuita de preservativos</li>
+                            <li><i class="fas fa-check"></i> Solicitação de exames para ISTs</li>
+                            <li><i class="fas fa-check"></i> Orientação sobre saúde sexual</li>
+                            <li><i class="fas fa-check"></i> Encaminhamento para especialistas</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+            
+            <h3>Como Marcar Exames</h3>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Unidades de Saúde</h4>
+                    <p>Entre em contato diretamente com a UBS ou posto de saúde mais próximo para agendar horários para exames de ISTs.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Disque Saúde</h4>
+                    <p>Ligue para o número de telefone do Disque Saúde da sua região (geralmente 136) e solicite informações sobre como marcar exames e onde encontrar serviços de saúde.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Agendamento Online</h4>
+                    <p>Em algumas regiões, é possível agendar exames pelo site ou aplicativo do sistema de saúde local.</p>
+                </div>
+            </div>
+            
+            <h3>Dicas Importantes</h3>
+            
+            <div class="success-box">
+                <ul>
+                    <li><strong>Documentação:</strong> Leve um documento de identificação para agilizar o processo de agendamento e atendimento.</li>
+                    <li><strong>Horários:</strong> Verifique o horário de funcionamento da unidade de saúde para evitar deslocamentos desnecessários.</li>
+                    <li><strong>Informação:</strong> Pergunte sobre os tipos de exames disponíveis e qual o mais adequado para o seu caso.</li>
+                    <li><strong>Dúvidas:</strong> Se estiver com alguma dúvida sobre o processo de agendamento ou sobre os exames, não hesite em pedir ajuda aos profissionais de saúde.</li>
+                </ul>
+            </div>
+        </section>
+
+        <!-- PrEP em Novo Hamburgo -->
+        <section id="prep" class="section tab-content">
+            <h2>PrEP em Novo Hamburgo</h2>
+            
+            <p>A Profilaxia Pré-Exposição (PrEP) é uma estratégia de prevenção ao HIV que consiste na tomada diária de um comprimido. Conheça onde acessar este serviço em Novo Hamburgo.</p>
+            
+            <div class="service-details">
+                <h3><i class="fas fa-map-marker-alt"></i> Serviço de Atendimento Especializado (SAE)</h3>
+                <div class="service-info">
+                    <div class="info-item">
+                        <i class="fas fa-map-pin"></i>
+                        <div>
+                            <strong>Endereço:</strong><br>
+                            Rua General Osório, 868 – Hamburgo Velho, Novo Hamburgo
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-phone"></i>
+                        <div>
+                            <strong>Contato:</strong><br>
+                            (51) 3581‑3322<br>
+                            dstaids@novohamburgo.rs.gov.br
+                        </div>
+                    </div>
+                    
+                    <div class="info-item">
+                        <i class="fas fa-info-circle"></i>
+                        <div>
+                            <strong>Serviços:</strong><br>
+                            Especializado em IST/HIV/Aids, com agendamento de consulta com enfermagem e médico que avaliam o interesse pela PrEP.
+                        </div>
+                    </div>
+                </div>
+                
+                <div class="location-map">
+                    <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3466.14729869299!2d-51.12874232444332!3d-29.68418641504062!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x951943c7bca3d38f%3A0xfb6d8f5c9a6c3c3b!2sR.%20Gen.%20Os%C3%B3rio%2C%20868%20-%20Hamburgo%20Velho%2C%20Novo%20Hamburgo%20-%20RS%2C%2093510-020!5e0!3m2!1spt-BR!2sbr!4v1687851234567!5m2!1spt-BR!2sbr" allowfullscreen="" loading="lazy"></iframe>
+                </div>
+            </div>
+            
+            <div class="service-details">
+                <h3><i class="fas fa-hospital"></i> Unidades Básicas de Saúde (UBS) e Unidades de Saúde da Família (USF)</h3>
+                <p>Você pode iniciar o processo de avaliação nestas unidades. Após indicação, o encaminhamento segue para o SAE ou UPA.</p>
+            </div>
+            
+            <div class="service-details">
+                <h3><i class="fas fa-ambulance"></i> Unidades de Pronto Atendimento (UPA)</h3>
+                <p>As UPAs Central e Canudos também disponibilizam encaminhamento и retirada de medicação (avaliado após consulta).</p>
+            </div>
+            
+            <div class="service-details">
+                <h3><i class="fas fa-vial"></i> Centro de Testagem e Aconselhamento (CTA)</h3>
+                <p>O município mantém este serviço no SAE (mesmo endereço acima), onde são realizados testes rápidos de HIV e sífilis, aconselhamento e início do protocolo ou agendamento de retorno.</p>
+            </div>
+            
+            <h3>Como Funciona o Atendimento</h3>
+            
+            <div class="process-steps">
+                <div class="step">
+                    <div class="step-number">1</div>
+                    <h4>Marcação</h4>
+                    <p>Agende com enfermagem ou médico no SAE, UBS ou UPA.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">2</div>
+                    <h4>Testagem</h4>
+                    <p>São feitos exames rápidos de HIV e outras ISTs.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">3</div>
+                    <h4>Prescrição</h4>
+                    <p>Se indicado, você recebe a medicação (tenofovir + emtricitabina) e entra no acompanhamento.</p>
+                </div>
+                
+                <div class="step">
+                    <div class="step-number">4</div>
+                    <h4>Acompanhamento</h4>
+                    <p>Consultas regulares para monitoramento e coleta de exames.</p>
+                </div>
+            </div>
+            
+            <div class="contact-info">
+                <div class="contact-item">
+                    <i class="fas fa-phone-alt"></i>
+                    <div>
+                        <strong>Disque Saúde:</strong><br>
+                        Ligue 136 para mais informações
+                    </div>
+                </div>
+                
+                <div class="contact-item">
+                    <i class="fas fa-globe"></i>
+                    <div>
+                        <strong>Site Oficial:</strong><br>
+                        www.novohamburgo.rs.gov.br/saude
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Mitos e Verdades -->
+        <section id="mitos" class="section tab-content">
+            <h2>Mitos e Verdades sobre Saúde Sexual</h2>
+            
+            <p>Muitas informações incorretas circulam sobre sexualidade. Vamos esclarecer alguns mitos comuns:</p>
+            
+            <div class="myth-truth-section">
+                <div class="myth-truth-item">
+                    <h3><i class="fas fa-times-circle" style="color: var(--accent)"></i> Mito: Relação durante a menstruação não engravida</h3>
+                    <p>Verdade: Embora menos provável, a gravidez é possível, pois os espermatozoides podem sobreviver por vários dias no corpo feminino.</p>
+                </div>
+                
+                <div class="myth-truth-item truth">
+                    <h3><i class="fas fa-check-circle" style="color: var(--success)"></i> Verdade: A primeira relação sexual pode sim resultar em gravidez</h3>
+                    <p>Não importa se é a primeira ou centésima relação - a gravidez pode ocorrer sempre que há relação sexual desprotegida.</p>
+                </div>
+                
+                <div class="myth-truth-item">
+                    <h3><i class="fas fa-times-circle" style="color: var(--accent)"></i> Mito: Pílula anticoncepcional protege contra ISTs</h3>
+                    <p>Verdade: A pílula previne apenas a gravidez, não oferece nenhuma proteção contra infecções sexualmente transmissíveis.</p>
+                </div>
+                
+                <div class="myth-truth-item truth">
+                    <h3><i class="fas fa-check-circle" style="color: var(--success)"></i> Verdade: Homens também podem ter HPV</h3>
+                    <p>O HPV afeta tanto homens quanto mulheres e pode causar câncer de pênis, ânus e garganta nos homens.</p>
+                </div>
+                
+                <div class="myth-truth-item">
+                    <h3><i class="fas fa-times-circle" style="color: var(--accent)"></i> Mito: Sexo oral não transmite doenças</h3>
+                    <p>Verdade: Muitas ISTs, incluindo gonorreia, sífilis, herpes e HPV, podem ser transmitidas através do sexo oral.</p>
+                </div>
+                
+                <div class="myth-truth-item">
+                    <h3><i class="fas fa-times-circle" style="color: var(--accent)"></i> Mito: Herpes genital só se transmite durante as crises</h3>
+                    <p>Verdade: A transmissão pode ocorrer mesmo sem lesões visíveis, através da eliminação assintomática do vírus.</p>
+                </div>
+                
+                <div class="myth-truth-item truth">
+                    <h3><i class="fas fa-check-circle" style="color: var(--success)"></i> Verdade: Hepatite B é 100 vezes mais infecciosa que HIV</h3>
+                    <p>O vírus da hepatite B is extremely contagious, mas felizmente existe vacina eficaz para prevenção.</p>
+                </div>
+                
+                <div class="myth-truth-item">
+                    <h3><i class="fas fa-times-circle" style="color: var(--accent)"></i> Mito: Gonorreia e clamídia são doenças apenas de mulheres</h3>
+                    <p>Verdade: Homens também são infectados e podem desenvolver complicações como epididimite e infertilidade.</p>
+                </div>
+            </div>
+            
+            <h3>Por que os mitos são perigosos?</h3>
+            <p>Crenças equivocadas sobre saúde sexual podem levar a comportamentos de risco, gravidez indesejada e propagação de infecções. Sempre busque informações em fontes confiáveis como profissionais de saúde, materiais educativos oficiais e campanhas de saúde pública.</p>
+        </section>
+
+        <!-- Quiz -->
+        <section id="quiz" class="section tab-content">
+            <h2>Teste seu Conhecimento sobre Saúde Sexual</h2>
+            <p>Responda as perguntas abaixo para verificar o que você aprendeu sobre saúde sexual e prevenção:</p>
+            
+            <div class="quiz-container">
+                <div class="quiz-question">
+                    <h3>1. Qual é o único método que previne tanto gravidez quanto ISTs?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">Pílula anticoncepcional</div>
+                        <div class="option" onclick="selectOption(this)">DIU</div>
+                        <div class="option correct" onclick="selectOption(this)">Preservativo (camisinha)</div>
+                        <div class="option" onclick="selectOption(this)">Tabelinha</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h3>2. O consentimento sexual deve ser:</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">Assumido se a pessoa não disser "não"</div>
+                        <div class="option correct" onclick="selectOption(this)">Explícito, entusiástico e contínuo</div>
+                        <div class="option" onclick="selectOption(this)">Dado uma vez para sempre</div>
+                        <div class="option" onclick="selectOption(this)">Necessário apenas na primeira relação</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h3>3. Qual destas ISTs pode ser prevenida com vacina?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">HIV/AIDS</div>
+                        <div class="option" onclick="selectOption(this)">Sífilis</div>
+                        <div class="option correct" onclick="selectOption(this)">HPV</div>
+                        <div class="option" onclick="selectOption(this)">Herpes</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h3>4. O sexo oral pode transmitir ISTs?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">Não, nunca</div>
+                        <div class="option" onclick="selectOption(this)">Só se houver feridas na boca</div>
+                        <div class="option correct" onclick="selectOption(this)">Sim, várias ISTs podem ser transmitidas</div>
+                        <div class="option" onclick="selectOption(this)">Apenas HIV</div>
+                    </div>
+                </div>
+                
+                <div class="quiz-question">
+                    <h3>5. Qual IST pode levar ao câncer de fígado se não tratada?</h3>
+                    <div class="options">
+                        <div class="option" onclick="selectOption(this)">Herpes genital</div>
+                        <div class="option" onclick="selectOption(this)">Sífilis</div>
+                        <div class="option correct" onclick="selectOption(this)">Hepatite B</div>
+                        <div class="option" onclick="selectOption(this)">Clamídia</div>
+                    </div>
+                </div>
+                
+                <button class="btn" onclick="checkQuiz()"><i class="fas fa-check-circle"></i> Verificar Respostas</button>
+                
+                <div class="quiz-result" id="quizResult">
+                    <h3>Seu Resultado: <span id="score">0</span>/5</h3>
+                    <p id="resultMessage"></p>
+                    <button class="btn" onclick="resetQuiz()"><i class="fas fa-redo"></i> Tentar Novamente</button>
+                </div>
+            </div>
+        </section>
+    </div>
+
+    <!-- Footer -->
+    <footer class="footer">
+        <div class="container">
+            <div class="footer-content">
+                <div class="footer-column">
+                    <h3>Saúde Sexual</h3>
+                    <p>Informações científicas e educativas para uma vida sexual saudável e responsável.</p>
+                    <p style="margin-top: 15px;"><i class="fas fa-phone"></i> Disque Saúde: 136</p>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Links Rápidos</h3>
+                    <ul>
+                        <li><a href="#" onclick="showTab('sexo')">Relação Sexual</a></li>
+                        <li><a href="#" onclick="showTab('cuidados')">Cuidados</a></li>
+                        <li><a href="#" onclick="showTab('doencas')">Doenças</a></li>
+                        <li><a href="#" onclick="showTab('servicos')">Serviços de Saúde</a></li>
+                        <li><a href="#" onclick="showTab('prep')">PrEP em NH</a></li>
+                        <li><a href="#" onclick="showTab('mitos')">Mitos & Verdades</a></li>
+                        <li><a href="#" onclick="showTab('quiz')">Quiz</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Recursos Úteis</h3>
+                    <ul>
+                        <li><a href="#">Onde fazer testagem gratuita</a></li>
+                        <li><a href="#">Centros de saúde especializados</a></li>
+                        <li><a href="#">Materiais educativos</a></li>
+                        <li><a href="#">Suporte psicológico</a></li>
+                        <li><a href="#">Distribuição de preservativos</a></li>
+                    </ul>
+                </div>
+                
+                <div class="footer-column">
+                    <h3>Informações</h3>
+                    <ul>
+                        <li><a href="#">Política de Privacidade</a></li>
+                        <li><a href="#">Termos de Uso</a></li>
+                        <li><a href="#">Fontes Científicas</a></li>
+                        <li><a href="#">Fale Conosco</a></li>
+                    </ul>
+                </div>
+            </div>
+            
+            <div class="copyright">
+                <p>&copy; 2023 Saúde Sexual - Todos os direitos reservados. Este site oferece apenas informações gerais e não substitui aconselhamento médico profissional.</p>
+            </div>
+        </div>
+    </footer>
+
+    <!-- Scroll to Top -->
+    <div class="scroll-top" onclick="scrollToTop()">
+        <i class="fas fa-arrow-up"></i>
+    </div>
+
+    <script>
+        // Função para alternar entre as seções
+        function showTab(tabId) {
+            // Esconde todas as seções
+            document.querySelectorAll('.tab-content').forEach(tab => {
+                tab.classList.remove('active');
+            });
+            
+            // Mostra a seção selecionada
+            document.getElementById(tabId).classList.add('active');
+            
+            // Atualiza a navegação ativa
+            document.querySelectorAll('nav a').forEach(link => {
+                link.classList.remove('active');
+            });
+            
+            // Ativa o link correspondente
+            const activeLink = document.querySelector(`nav a[onclick*="${tabId}"]`);
+            if (activeLink) {
+                activeLink.classList.add('active');
+            }
+            
+            // Scroll suave para o topo da seção
+            document.getElementById(tabId).scrollIntoView({behavior: 'smooth'});
+        }
+        
+        // Botão de scroll para o topo
+        window.addEventListener('scroll', function() {
+            const scrollTop = document.querySelector('.scroll-top');
+            if (window.pageYOffset > 300) {
+                scrollTop.classList.add('show');
+            } else {
+                scrollTop.classList.remove('show');
+            }
+        });
+        
+        function scrollToTop() {
+            window.scrollTo({
+                top: 0,
+                behavior: 'smooth'
+            });
+        }
+        
+        // Quiz functions
+        function selectOption(element) {
+            // Remove selection from all options in this question
+            const options = element.parentElement.querySelectorAll('.option');
+            options.forEach(opt => opt.classList.remove('selected'));
+            
+            // Select clicked option
+            element.classList.add('selected');
+        }
+        
+        function checkQuiz() {
+            let score = 0;
+            const questions = document.querySelectorAll('.quiz-question');
+            
+            questions.forEach(question => {
+                const selected = question.querySelector('.option.selected');
+                if (selected && selected.classList.contains('correct')) {
+                    score++;
+                    selected.style.backgroundColor = 'rgba(67, 160, 71, 0.2)';
+                } else if (selected) {
+                    selected.style.backgroundColor = 'rgba(211, 47, 47, 0.2)';
+                    // Highlight correct answer
+                    const correct = question.querySelector('.correct');
+                    if (correct) {
+                        correct.style.backgroundColor = 'rgba(67, 160, 71, 0.2)';
+                    }
+                }
+            });
+            
+            const result = document.getElementById('quizResult');
+            const scoreElement = document.getElementById('score');
+            const messageElement = document.getElementById('resultMessage');
+            
+            scoreElement.textContent = score;
+            
+            if (score === 5) {
+                messageElement.textContent = 'Parabéns! Você demonstrou excelente conhecimento sobre saúde sexual.';
+            } else if (score >= 3) {
+                messageElement.textContent = 'Bom trabalho! Você tem um bom conhecimento, mas pode melhorar em alguns pontos.';
+            } else {
+                messageElement.textContent = 'Continue aprendendo! Revise as informações do site para melhorar seu conhecimento.';
+            }
+            
+            result.style.display = 'block';
+            result.scrollIntoView({behavior: 'smooth'});
+        }
+        
+        function resetQuiz() {
+            // Reset all selections
+            document.querySelectorAll('.option').forEach(option => {
+                option.classList.remove('selected');
+                option.style.backgroundColor = '';
+            });
+            
+            // Hide result
+            document.getElementById('quizResult').style.display = 'none';
+        }
+        
+        // Initialize animations
+        document.addEventListener('DOMContentLoaded', function() {
+            // Add subtle animation to sections
+            const sections = document.querySelectorAll('.section');
+            
+            sections.forEach((section, index) => {
+                section.style.opacity = 0;
+                section.style.transform = 'translateY(20px)';
+                section.style.transition = 'opacity 0.6s ease, transform 0.6s ease';
+                
+                // Delay for sequential animation
+                setTimeout(() => {
+                    section.style.opacity = 1;
+                    section.style.transform = 'translateY(0)';
+                }, 200 + index * 100);
+            });
+        });
+    </script>
+</body>
+</html>
