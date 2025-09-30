@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>QR Code - Saúde Sexual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <script src="https://cdn.jsdelivr.net/npm/qrcode@1.5.3/build/qrcode.min.js"></script>
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #ebf5ff;
+            --dark-color: #1a237e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 56px;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .qrcode-container {
+            text-align: center;
+            padding: 30px;
+            background: white;
+            border-radius: 15px;
+            box-shadow: 0 10px 30px rgba(0,0,0,0.1);
+            margin: 30px auto;
+            max-width: 500px;
+        }
+        
+        .qrcode-container canvas {
+            border: 15px solid white;
+            border-radius: 15px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin: 0 auto;
+        }
+        
+        .print-section {
+            margin-top: 30px;
+            padding: 20px;
+            background-color: #f8f9fa;
+            border-radius: 10px;
+        }
+        
+        .qr-instructions {
+            margin-top: 20px;
+            font-size: 0.9rem;
+            color: #666;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        @media print {
+            .navbar, .no-print, footer, .btn {
+                display: none !important;
+            }
+            
+            .qrcode-container {
+                box-shadow: none;
+                border: 2px solid #ddd;
+                page-break-inside: avoid;
+            }
+            
+            body {
+                padding-top: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>Saúde Sexual
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preservativos.html"><i class="fas fa-shield-alt me-1"></i> Preservativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doencas.html"><i class="fas fa-virus me-1"></i> DSTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ajuda.html"><i class="fas fa-hands-helping me-1"></i> Ajuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vacinas.html"><i class="fas fa-syringe me-1"></i> Vacinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consentimento.html"><i class="fas fa-handshake me-1"></i> Consentimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="qrcode.html"><i class="fas fa-qrcode me-1"></i> QR Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- QR Code Section -->
+    <section class="py-5" style="background: linear-gradient(135deg, var(--primary-color), var(--secondary-color)); color: white;">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Compartilhe Informações sobre Saúde Sexual</h1>
+            <p class="lead">Use o QR Code abaixo para direcionar pessoas para este site educativo</p>
+        </div>
+    </section>
+
+    <section class="py-5">
+        <div class="container">
+            <div class="row justify-content-center">
+                <div class="col-lg-8">
+                    <div class="qrcode-container">
+                        <h3><i class="fas fa-qrcode me-2"></i> QR Code do Site</h3>
+                        <p class="text-muted">Aponte a câmera do seu celular para este código</p>
+                        
+                        <div id="qrcode" class="my-4"></div>
+                        
+                        <p><strong>URL:</strong> <span id="site-url">https://saudexsexual.com.br</span></p>
+                        
+                        <div class="qr-instructions">
+                            <p><i class="fas fa-info-circle me-2"></i> <strong>Como usar:</strong></p>
+                            <ol class="text-start">
+                                <li>Abra a câmera do seu celular</li>
+                                <li>Aponte para o código QR acima</li>
+                                <li>Toque na notificação que aparecer</li>
+                                <li>Você será direcionado para o site</li>
+                            </ol>
+                        </div>
+                    </div>
+                    
+                    <div class="print-section text-center">
+                        <h4><i class="fas fa-print me-2"></i> Imprimir QR Codes</h4>
+                        <p>Clique no botão abaixo para imprimir esta página com o QR Code. Você pode distribuir para escolas, postos de saúde, universidades e outros locais.</p>
+                        <button onclick="window.print()" class="btn btn-primary btn-lg">
+                            <i class="fas fa-print me-2"></i> Imprimir QR Code
+                        </button>
+                        
+                        <div class="mt-4">
+                            <h5>Dicas para distribuição:</h5>
+                            <ul class="list-unstyled">
+                                <li><i class="fas fa-check text-success me-2"></i> Cole em murais de universidades</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Distribua em postos de saúde</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Deixe em salas de espera de consultórios</li>
+                                <li><i class="fas fa-check text-success me-2"></i> Compartilhe em eventos sobre saúde</li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5>Saúde Sexual</h5>
+                    <p>Informação científica, acessível e completa para uma vida sexual saudável, segura e responsável.</p>
+                    <p><em>Este site não substitui aconselhamento médico profissional.</em></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="preservativos.html" class="text-white">Preservativos</a></li>
+                        <li><a href="doencas.html" class="text-white">DSTs</a></li>
+                        <li><a href="ajuda.html" class="text-white">Ajuda</a></li>
+                        <li><a href="vacinas.html" class="text-white">Vacinas</a></li>
+                        <li><a href="consentimento.html" class="text-white">Consentimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Saúde Sexual - Site Educativo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        document.addEventListener('DOMContentLoaded', function() {
+            // Gerar QR Code
+            const siteUrl = window.location.origin + window.location.pathname.replace('qrcode.html', 'index.html');
+            document.getElementById('site-url').textContent = siteUrl;
+            
+            QRCode.toCanvas(document.getElementById('qrcode'), siteUrl, {
+                width: 250,
+                margin: 2,
+                color: {
+                    dark: '#1a237e',
+                    light: '#ffffff'
+                }
+            }, function(error) {
+                if (error) console.error(error);
+            });
+            
+            // Highlight active nav link
+            const currentPage = window.location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

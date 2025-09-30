@@ -1,0 +1,457 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Onde Buscar Ajuda - Saúde Sexual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #ebf5ff;
+            --dark-color: #1a237e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 56px;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .service-card {
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .emergency-card {
+            border-left: 5px solid #dc3545;
+        }
+        
+        .prep-card {
+            border-left: 5px solid #198754;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .contact-badge {
+            font-size: 1.1rem;
+            padding: 10px 20px;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>Saúde Sexual
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preservativos.html"><i class="fas fa-shield-alt me-1"></i> Preservativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doencas.html"><i class="fas fa-virus me-1"></i> DSTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="ajuda.html"><i class="fas fa-hands-helping me-1"></i> Ajuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vacinas.html"><i class="fas fa-syringe me-1"></i> Vacinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consentimento.html"><i class="fas fa-handshake me-1"></i> Consentimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="qrcode.html"><i class="fas fa-qrcode me-1"></i> QR Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Onde Buscar Ajuda</h1>
+            <p class="lead">Serviços de saúde, telefones úteis e locais de atendimento especializado</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Telefones de Emergência -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-phone-alt me-2"></i>Telefones de Emergência
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-3 mb-3">
+                            <div class="card emergency-card text-center h-100">
+                                <div class="card-body">
+                                    <div class="display-4 text-danger mb-3">
+                                        <i class="fas fa-ambulance"></i>
+                                    </div>
+                                    <h3>192</h3>
+                                    <h5>SAMU</h5>
+                                    <p class="mb-0">Serviço de Atendimento Móvel de Urgência</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card emergency-card text-center h-100">
+                                <div class="card-body">
+                                    <div class="display-4 text-danger mb-3">
+                                        <i class="fas fa-fire"></i>
+                                    </div>
+                                    <h3>193</h3>
+                                    <h5>Bombeiros</h5>
+                                    <p class="mb-0">Emergências e resgates</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card emergency-card text-center h-100">
+                                <div class="card-body">
+                                    <div class="display-4 text-danger mb-3">
+                                        <i class="fas fa-shield-alt"></i>
+                                    </div>
+                                    <h3>190</h3>
+                                    <h5>Polícia Militar</h5>
+                                    <p class="mb-0">Emergências policiais</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-3 mb-3">
+                            <div class="card emergency-card text-center h-100">
+                                <div class="card-body">
+                                    <div class="display-4 text-danger mb-3">
+                                        <i class="fas fa-female"></i>
+                                    </div>
+                                    <h3>180</h3>
+                                    <h5>Central da Mulher</h5>
+                                    <p class="mb-0">Violência doméstica</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Serviços do SUS -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-primary mb-4">
+                        <i class="fas fa-hospital me-2"></i>Serviços do SUS
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card service-card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-clinic-medical me-2"></i>UBS - Unidades Básicas de Saúde
+                                    </h4>
+                                    <p class="card-text">Serviços oferecidos:</p>
+                                    <ul>
+                                        <li>Distribuição de preservativos</li>
+                                        <li>Testagem rápida para HIV e sífilis</li>
+                                        <li>Vacinação</li>
+                                        <li>Encaminhamentos</li>
+                                        <li>Aconselhamento</li>
+                                    </ul>
+                                    <p class="mb-0"><strong>Como acessar:</strong> Procure a UBS mais próxima de sua casa</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card service-card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-vial me-2"></i>CTA - Centro de Testagem e Aconselhamento
+                                    </h4>
+                                    <p class="card-text">Serviços especializados:</p>
+                                    <ul>
+                                        <li>Testagem confidencial</li>
+                                        <li>Aconselhamento pré e pós-teste</li>
+                                        <li>Distribuição de PEP</li>
+                                        <li>Encaminhamento para tratamento</li>
+                                    </ul>
+                                    <p class="mb-0"><strong>Atendimento:</strong> Gratuito e sigiloso</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card service-card h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-user-md me-2"></i>SAE - Serviço de Atendimento Especializado
+                                    </h4>
+                                    <p class="card-text">Atendimento para:</p>
+                                    <ul>
+                                        <li>Pessoas vivendo com HIV/AIDS</li>
+                                        <li>Tratamento de hepatites virais</li>
+                                        <li>Acompanhamento de DSTs</li>
+                                        <li>Distribuição de medicamentos</li>
+                                    </ul>
+                                    <p class="mb-0"><strong>Requisito:</strong> Encaminhamento da UBS</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- PrEP em Novo Hamburgo -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <div class="card prep-card">
+                        <div class="card-body">
+                            <h2 class="text-success mb-4">
+                                <i class="fas fa-capsules me-2"></i>PrEP - Profilaxia Pré-Exposição em Novo Hamburgo
+                            </h2>
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <h4>O que é PrEP?</h4>
+                                    <p>PrEP (Profilaxia Pré-Exposição) é uma forma de prevenção ao HIV onde pessoas não infectadas tomam um comprimido diário para reduzir o risco de infecção.</p>
+                                    
+                                    <h5>Quem pode usar?</h5>
+                                    <ul>
+                                        <li>Pessoas com parceiros soropositivos</li>
+                                        <li>Homens que fazem sexo com homens</li>
+                                        <li>Pessoas trans</li>
+                                        <li>Trabalhadores do sexo</li>
+                                        <li>Pessoas em relacionamentos sorodiscordantes</li>
+                                    </ul>
+                                    
+                                    <h5>Eficácia:</h5>
+                                    <p>Mais de 90% de eficácia quando usada corretamente</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light">
+                                        <div class="card-body">
+                                            <h5>
+                                                <i class="fas fa-map-marker-alt me-2"></i>
+                                                Local em Novo Hamburgo
+                                            </h5>
+                                            <p><strong>SAE - Serviço de Atendimento Especializado</strong></p>
+                                            <p>Endereço: Rua Bento Gonçalves, 1000 - Centro</p>
+                                            <p>Telefone: (51) 3594-1234</p>
+                                            <p>Horário: Segunda a sexta, 8h às 17h</p>
+                                            <div class="alert alert-info mt-3">
+                                                <i class="fas fa-info-circle me-2"></i>
+                                                <strong>Gratuito no SUS</strong> - Agende sua consulta
+                                            </div>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Telefones Úteis -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-primary mb-4">
+                        <i class="fas fa-headset me-2"></i>Telefones Úteis
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <span class="badge bg-primary contact-badge me-3">136</span>
+                                        Disque Saúde
+                                    </h5>
+                                    <p class="card-text">Tira-dúvidas sobre saúde, informações sobre doenças e localização de serviços</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <span class="badge bg-primary contact-badge me-3">0800 16 25 50</span>
+                                        Disque DST/AIDS
+                                    </h5>
+                                    <p class="card-text">Informações sobre HIV/AIDS e outras DSTs</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <span class="badge bg-primary contact-badge me-3">100</span>
+                                        Direitos Humanos
+                                    </h5>
+                                    <p class="card-text">Denúncias de violação de direitos humanos</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-3">
+                            <div class="card">
+                                <div class="card-body">
+                                    <h5 class="card-title">
+                                        <span class="badge bg-primary contact-badge me-3">181</span>
+                                        Disque Denúncia
+                                    </h5>
+                                    <p class="card-text">Denúncias anônimas (RS)</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- ONGs e Grupos de Apoio -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-primary mb-4">
+                        <i class="fas fa-hands-helping me-2"></i>ONGs e Grupos de Apoio
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">GAPA - RS</h5>
+                                    <p class="card-text">Grupo de Apoio à Prevenção à AIDS do Rio Grande do Sul</p>
+                                    <p><strong>Telefone:</strong> (51) 3228-4604</p>
+                                    <p><strong>Site:</strong> www.gapars.org.br</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">Arco-Íris</h5>
+                                    <p class="card-text">Associação pela Livre Orientação Sexual de Novo Hamburgo</p>
+                                    <p><strong>Atendimento:</strong> Apoio à comunidade LGBTQIA+</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-4 mb-4">
+                            <div class="card h-100">
+                                <div class="card-body">
+                                    <h5 class="card-title">CVV - Centro de Valorização da Vida</h5>
+                                    <p class="card-text">Apoio emocional e prevenção do suicídio</p>
+                                    <p><strong>Telefone:</strong> 188</p>
+                                    <p><strong>Site:</strong> www.cvv.org.br</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5>Saúde Sexual</h5>
+                    <p>Informação científica, acessível e completa para uma vida sexual saudável, segura e responsável.</p>
+                    <p><em>Este site não substitui aconselhamento médico profissional.</em></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="preservativos.html" class="text-white">Preservativos</a></li>
+                        <li><a href="doencas.html" class="text-white">DSTs</a></li>
+                        <li><a href="ajuda.html" class="text-white">Ajuda</a></li>
+                        <li><a href="vacinas.html" class="text-white">Vacinas</a></li>
+                        <li><a href="consentimento.html" class="text-white">Consentimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Saúde Sexual - Site Educativo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

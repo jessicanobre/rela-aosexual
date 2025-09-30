@@ -1,0 +1,427 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Vacinas - Saúde Sexual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #ebf5ff;
+            --dark-color: #1a237e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 56px;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+            transition: transform 0.3s;
+        }
+        
+        .card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .vaccine-card {
+            border-left: 5px solid var(--primary-color);
+        }
+        
+        .sus-badge {
+            background-color: #198754;
+        }
+        
+        .private-badge {
+            background-color: #6c757d;
+        }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .vaccine-icon {
+            font-size: 3rem;
+            color: var(--primary-color);
+            margin-bottom: 1rem;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>Saúde Sexual
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preservativos.html"><i class="fas fa-shield-alt me-1"></i> Preservativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="doencas.html"><i class="fas fa-virus me-1"></i> DSTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ajuda.html"><i class="fas fa-hands-helping me-1"></i> Ajuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="vacinas.html"><i class="fas fa-syringe me-1"></i> Vacinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consentimento.html"><i class="fas fa-handshake me-1"></i> Consentimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="qrcode.html"><i class="fas fa-qrcode me-1"></i> QR Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Vacinas para Saúde Sexual</h1>
+            <p class="lead">Proteção contra doenças sexualmente transmissíveis através da imunização</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Introdução -->
+            <div class="row mb-5">
+                <div class="col-lg-8 mx-auto">
+                    <div class="card bg-light">
+                        <div class="card-body text-center">
+                            <i class="fas fa-syringe vaccine-icon"></i>
+                            <h3 class="card-title">A Importância da Vacinação</h3>
+                            <p class="card-text">As vacinas são uma das formas mais eficazes de prevenção primária contra diversas doenças, incluindo algumas que podem ser transmitidas sexualmente. Manter a carteira de vacinação em dia é essencial para a saúde sexual.</p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Vacinas Disponíveis -->
+            <div class="row mb-5">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-list-alt me-2"></i>Vacinas Disponíveis
+                    </h2>
+                    
+                    <!-- HPV -->
+                    <div class="card vaccine-card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h3 class="card-title">HPV - Papilomavírus Humano</h3>
+                                        <span class="badge sus-badge text-white">DISPONÍVEL NO SUS</span>
+                                    </div>
+                                    <p class="card-text"><strong>Proteção contra:</strong> Tipos de HPV que causam câncer de colo de útero, pênis, ânus, orofaringe e verrugas genitais.</p>
+                                    
+                                    <h5>Público-alvo no SUS:</h5>
+                                    <ul>
+                                        <li>Meninas de 9 a 14 anos (2 doses)</li>
+                                        <li>Meninos de 11 a 14 anos (2 doses)</li>
+                                        <li>Imunossuprimidos de 9 a 26 anos (3 doses)</li>
+                                    </ul>
+                                    
+                                    <h5>Eficácia:</h5>
+                                    <p>Quase 100% para os tipos vacinais quando administrada antes do início da vida sexual.</p>
+                                    
+                                    <div class="alert alert-info mt-3">
+                                        <i class="fas fa-info-circle me-2"></i>
+                                        <strong>Importante:</strong> A vacina não substitui o rastreamento com Papanicolau em mulheres.
+                                    </div>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body">
+                                            <h5><i class="fas fa-info-circle me-2"></i>Informações</h5>
+                                            <p><strong>Tipos protegidos:</strong> 6, 11, 16, 18 (SUS)</p>
+                                            <p><strong>Esquema:</strong> 2 doses (0 e 6 meses)</p>
+                                            <p><strong>Onde tomar:</strong> Postos de saúde</p>
+                                            <p><strong>Adultos:</strong> Disponível em clínicas privadas até 45 anos</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hepatite B -->
+                    <div class="card vaccine-card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h3 class="card-title">Hepatite B</h3>
+                                        <span class="badge sus-badge text-white">DISPONÍVEL NO SUS</span>
+                                    </div>
+                                    <p class="card-text"><strong>Proteção contra:</strong> Vírus da hepatite B, que pode ser transmitido sexualmente e por contato com sangue.</p>
+                                    
+                                    <h5>Público-alvo:</h5>
+                                    <ul>
+                                        <li>Todas as idades (SUS)</li>
+                                        <li>Especialmente indicada para:
+                                            <ul>
+                                                <li>Profissionais do sexo</li>
+                                                <li>Homens que fazem sexo com homens</li>
+                                                <li>Pessoas com múltiplos parceiros</li>
+                                                <li>Profissionais de saúde</li>
+                                            </ul>
+                                        </li>
+                                    </ul>
+                                    
+                                    <h5>Esquema vacinal:</h5>
+                                    <p>3 doses (0, 1 e 6 meses) - 95% de eficácia</p>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body">
+                                            <h5><i class="fas fa-info-circle me-2"></i>Informações</h5>
+                                            <p><strong>Duração:</strong> Pelo menos 20 anos</p>
+                                            <p><strong>Eficácia:</strong> 95% em adultos</p>
+                                            <p><strong>Onde tomar:</strong> Postos de saúde</p>
+                                            <p><strong>Gratuito:</strong> Sim, para todas as idades</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hepatite A -->
+                    <div class="card vaccine-card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h3 class="card-title">Hepatite A</h3>
+                                        <span class="badge sus-badge text-white">DISPONÍVEL NO SUS</span>
+                                    </div>
+                                    <p class="card-text"><strong>Proteção contra:</strong> Vírus da hepatite A, que pode ser transmitido por contato sexual oral-anal.</p>
+                                    
+                                    <h5>Público-alvo no SUS:</h5>
+                                    <ul>
+                                        <li>Crianças de 15 meses</li>
+                                        <li>Grupos de risco</li>
+                                    </ul>
+                                    
+                                    <h5>Esquema vacinal:</h5>
+                                    <p>2 doses com intervalo de 6 meses</p>
+                                    
+                                    <h5>Indicada para:</h5>
+                                    <ul>
+                                        <li>Homens que fazem sexo com homens</li>
+                                        <li>Pessoas com hepatopatias crônicas</li>
+                                        <li>Viajantes para áreas endêmicas</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body">
+                                            <h5><i class="fas fa-info-circle me-2"></i>Informações</h5>
+                                            <p><strong>Esquema:</strong> 2 doses</p>
+                                            <p><strong>Intervalo:</strong> 6 meses</p>
+                                            <p><strong>Onde tomar:</strong> Postos de saúde</p>
+                                            <p><strong>Adultos:</strong> Disponível para grupos de risco</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Meningocócica -->
+                    <div class="card vaccine-card mb-4">
+                        <div class="card-body">
+                            <div class="row">
+                                <div class="col-md-8">
+                                    <div class="d-flex justify-content-between align-items-start mb-3">
+                                        <h3 class="card-title">Meningocócica ACWY e B</h3>
+                                        <span class="badge private-badge text-white">CLÍNICAS PRIVADAS</span>
+                                    </div>
+                                    <p class="card-text"><strong>Proteção contra:</strong> Meningite, que pode ser transmitida por contato íntimo prolongado.</p>
+                                    
+                                    <h5>Recomendada para:</h5>
+                                    <ul>
+                                        <li>Adolescentes e jovens adultos</li>
+                                        <li>Homens que fazem sexo com homens</li>
+                                        <li>Pessoas em ambientes congregados</li>
+                                        <li>Viajantes para áreas endêmicas</li>
+                                    </ul>
+                                    
+                                    <h5>Tipos disponíveis:</h5>
+                                    <ul>
+                                        <li>Meningocócica ACWY (conjugada)</li>
+                                        <li>Meningocócica B (recombinante)</li>
+                                    </ul>
+                                </div>
+                                <div class="col-md-4">
+                                    <div class="card bg-light h-100">
+                                        <div class="card-body">
+                                            <h5><i class="fas fa-info-circle me-2"></i>Informações</h5>
+                                            <p><strong>Disponibilidade:</strong> Clínicas privadas</p>
+                                            <p><strong>Esquema:</strong> Varia por idade</p>
+                                            <p><strong>Indicação:</strong> Principalmente para grupos de risco</p>
+                                        </div>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Onde se Vacinar -->
+            <div class="row">
+                <div class="col-12">
+                    <h2 class="text-center mb-4">
+                        <i class="fas fa-map-marker-alt me-2"></i>Onde se Vacinar
+                    </h2>
+                    <div class="row">
+                        <div class="col-md-6 mb-4">
+                            <div class="card bg-success text-white h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-hospital me-2"></i>SUS - Gratuito
+                                    </h4>
+                                    <ul>
+                                        <li>Postos de Saúde (UBS)</li>
+                                        <li>Centros de Saúde</li>
+                                        <li>Hospitais Públicos</li>
+                                        <li>Campanhas de Vacinação</li>
+                                    </ul>
+                                    <p><strong>Documentos necessários:</strong> Cartão SUS e documento com foto</p>
+                                </div>
+                            </div>
+                        </div>
+                        <div class="col-md-6 mb-4">
+                            <div class="card bg-primary text-white h-100">
+                                <div class="card-body">
+                                    <h4 class="card-title">
+                                        <i class="fas fa-clinic-medical me-2"></i>Clínicas Privadas
+                                    </h4>
+                                    <ul>
+                                        <li>Clínicas de vacinação</li>
+                                        <li>Laboratórios particulares</li>
+                                        <li>Consultórios médicos</li>
+                                        <li>Farmácias com serviço de vacinação</li>
+                                    </ul>
+                                    <p><strong>Vantagem:</strong> Vacinas não disponíveis no SUS e flexibilidade de horários</p>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Lembrete -->
+            <div class="alert alert-warning mt-5">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <strong>Lembre-se:</strong> Mantenha sua carteira de vacinação sempre atualizada e consulte um profissional de saúde para orientações individuais.
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5>Saúde Sexual</h5>
+                    <p>Informação científica, acessível e completa para uma vida sexual saudável, segura e responsável.</p>
+                    <p><em>Este site não substitui aconselhamento médico profissional.</em></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="preservativos.html" class="text-white">Preservativos</a></li>
+                        <li><a href="doencas.html" class="text-white">DSTs</a></li>
+                        <li><a href="ajuda.html" class="text-white">Ajuda</a></li>
+                        <li><a href="vacinas.html" class="text-white">Vacinas</a></li>
+                        <li><a href="consentimento.html" class="text-white">Consentimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Saúde Sexual - Site Educativo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>

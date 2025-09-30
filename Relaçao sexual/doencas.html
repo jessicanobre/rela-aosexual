@@ -1,0 +1,465 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Doenças Sexualmente Transmissíveis - Saúde Sexual</title>
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0/css/all.min.css">
+    <style>
+        :root {
+            --primary-color: #4a6fa5;
+            --secondary-color: #166088;
+            --accent-color: #4fc3f7;
+            --light-color: #ebf5ff;
+            --dark-color: #1a237e;
+        }
+        
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: #333;
+            padding-top: 56px;
+        }
+        
+        .navbar {
+            background-color: var(--primary-color);
+            box-shadow: 0 2px 10px rgba(0,0,0,0.1);
+        }
+        
+        .navbar-brand {
+            font-weight: 700;
+            color: white !important;
+        }
+        
+        .nav-link {
+            color: rgba(255,255,255,0.85) !important;
+            font-weight: 500;
+            margin: 0 5px;
+            transition: all 0.3s;
+        }
+        
+        .nav-link:hover, .nav-link.active {
+            color: white !important;
+            transform: translateY(-2px);
+        }
+        
+        .hero {
+            background: linear-gradient(135deg, var(--primary-color), var(--secondary-color));
+            color: white;
+            padding: 4rem 0;
+            margin-bottom: 2rem;
+            border-radius: 0 0 20px 20px;
+        }
+        
+        .card {
+            border: none;
+            border-radius: 10px;
+            box-shadow: 0 5px 15px rgba(0,0,0,0.1);
+            margin-bottom: 20px;
+        }
+        
+        .disease-card {
+            border-left: 5px solid var(--primary-color);
+            transition: transform 0.3s;
+        }
+        
+        .disease-card:hover {
+            transform: translateY(-5px);
+        }
+        
+        .disease-category {
+            background-color: #f8f9fa;
+            border-radius: 10px;
+            padding: 20px;
+            margin-bottom: 30px;
+        }
+        
+        .disease-category h3 {
+            color: var(--primary-color);
+            border-bottom: 2px solid var(--primary-color);
+            padding-bottom: 10px;
+        }
+        
+        .badge-bacterial { background-color: #dc3545; }
+        .badge-viral { background-color: #0d6efd; }
+        .badge-parasitic { background-color: #198754; }
+        .badge-fungal { background-color: #6f42c1; }
+        
+        footer {
+            background-color: var(--dark-color);
+            color: white;
+            padding: 2rem 0;
+            margin-top: 3rem;
+        }
+        
+        .symptom-list {
+            columns: 2;
+            -webkit-columns: 2;
+            -moz-columns: 2;
+        }
+        
+        @media (max-width: 768px) {
+            .hero {
+                padding: 2rem 0;
+            }
+            .symptom-list {
+                columns: 1;
+                -webkit-columns: 1;
+                -moz-columns: 1;
+            }
+        }
+    </style>
+</head>
+<body>
+    <!-- Navbar -->
+    <nav class="navbar navbar-expand-lg navbar-dark fixed-top">
+        <div class="container">
+            <a class="navbar-brand" href="index.html">
+                <i class="fas fa-heartbeat me-2"></i>Saúde Sexual
+            </a>
+            <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav">
+                <span class="navbar-toggler-icon"></span>
+            </button>
+            <div class="collapse navbar-collapse" id="navbarNav">
+                <ul class="navbar-nav ms-auto">
+                    <li class="nav-item">
+                        <a class="nav-link" href="index.html"><i class="fas fa-home me-1"></i> Início</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="preservativos.html"><i class="fas fa-shield-alt me-1"></i> Preservativos</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link active" href="doencas.html"><i class="fas fa-virus me-1"></i> DSTs</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="ajuda.html"><i class="fas fa-hands-helping me-1"></i> Ajuda</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="vacinas.html"><i class="fas fa-syringe me-1"></i> Vacinas</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="consentimento.html"><i class="fas fa-handshake me-1"></i> Consentimento</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="qrcode.html"><i class="fas fa-qrcode me-1"></i> QR Code</a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero Section -->
+    <section class="hero">
+        <div class="container text-center">
+            <h1 class="display-4 fw-bold">Doenças Sexualmente Transmissíveis</h1>
+            <p class="lead">Informações completas sobre prevenção, sintomas e tratamentos</p>
+        </div>
+    </section>
+
+    <!-- Conteúdo Principal -->
+    <section class="py-5">
+        <div class="container">
+            <!-- Alerta Importante -->
+            <div class="alert alert-warning">
+                <i class="fas fa-exclamation-triangle me-2"></i>
+                <strong>Importante:</strong> Muitas DSTs podem ser assintomáticas. Faça testagem regular se for sexualmente ativo.
+            </div>
+
+            <!-- DSTs Bacterianas -->
+            <div class="disease-category">
+                <h3><i class="fas fa-bacteria me-2"></i> DSTs Bacterianas</h3>
+                <div class="row">
+                    <!-- Sífilis -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Sífilis</h4>
+                                    <span class="badge badge-bacterial text-white">Bacteriana</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Treponema pallidum</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li><em>1ª fase:</em> Úlcera indolor (cancro)</li>
+                                    <li><em>2ª fase:</em> Manchas no corpo, febre</li>
+                                    <li><em>Latente:</em> Assintomática</li>
+                                    <li><em>Terciária:</em> Danos a órgãos</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Penicilina</p>
+                                <p><strong>Complicações:</strong> Neurossífilis, sífilis congênita</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Gonorreia -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Gonorreia</h4>
+                                    <span class="badge badge-bacterial text-white">Bacteriana</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Neisseria gonorrhoeae</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Corrimento amarelado</li>
+                                    <li>Dor ao urinar</li>
+                                    <li>Pode ser assintomática</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Antibióticos (ceftriaxona)</p>
+                                <p><strong>Complicações:</strong> Infertilidade, DIP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Clamídia -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Clamídia</h4>
+                                    <span class="badge badge-bacterial text-white">Bacteriana</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Chlamydia trachomatis</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>70% dos casos assintomáticos</li>
+                                    <li>Corrimento vaginal/uretral</li>
+                                    <li>Dor pélvica</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Azitromicina ou Doxiciclina</p>
+                                <p><strong>Complicações:</strong> Infertilidade, gravidez ectópica</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Cancro Mole -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Cancro Mole</h4>
+                                    <span class="badge badge-bacterial text-white">Bacteriana</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Haemophilus ducreyi</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Úlceras genitais dolorosas</li>
+                                    <li>Ínguas na virilha</li>
+                                    <li>Secreção purulenta</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Azitromicina</p>
+                                <p><strong>Complicações:</strong> Fístulas, destruição tecidual</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DSTs Virais -->
+            <div class="disease-category">
+                <h3><i class="fas fa-virus me-2"></i> DSTs Virais</h3>
+                <div class="row">
+                    <!-- HIV/AIDS -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">HIV/AIDS</h4>
+                                    <span class="badge badge-viral text-white">Viral</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Vírus da Imunodeficiência Humana</h6>
+                                <p><strong>Sintomas agudos:</strong></p>
+                                <ul>
+                                    <li>Febre, fadiga</li>
+                                    <li>Dor de garganta</li>
+                                    <li>Ínguas no pescoço</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> TARV (antirretrovirais)</p>
+                                <p><strong>Prevenção:</strong> Preservativos, PrEP, PEP</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- HPV -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">HPV</h4>
+                                    <span class="badge badge-viral text-white">Viral</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Papilomavírus Humano</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Verrugas genitais</li>
+                                    <li>Pode ser assintomático</li>
+                                    <li>Lesões pré-cancerosas</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Remoção de verrugas</p>
+                                <p><strong>Prevenção:</strong> Vacina, preservativos</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Herpes -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Herpes Genital</h4>
+                                    <span class="badge badge-viral text-white">Viral</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">HSV-1 e HSV-2</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Vesículas dolorosas</li>
+                                    <li>Coceira e ardência</li>
+                                    <li>Recorrências</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Aciclovir (sintomas)</p>
+                                <p><strong>Observação:</strong> Sem cura, tratamento sintomático</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Hepatite B -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Hepatite B</h4>
+                                    <span class="badge badge-viral text-white">Viral</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">HBV</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Icterícia</li>
+                                    <li>Fadiga, náuseas</li>
+                                    <li>Urina escura</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Antivirais</p>
+                                <p><strong>Prevenção:</strong> Vacina (95% eficaz)</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- DSTs Parasitárias e Outras -->
+            <div class="disease-category">
+                <h3><i class="fas fa-bug me-2"></i> DSTs Parasitárias e Outras</h3>
+                <div class="row">
+                    <!-- Tricomoníase -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Tricomoníase</h4>
+                                    <span class="badge badge-parasitic text-white">Parasitária</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Trichomonas vaginalis</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Corrimento amarelo-esverdeado</li>
+                                    <li>Odor fétido</li>
+                                    <li>Coceira genital</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Metronidazol</p>
+                                <p><strong>Complicações:</strong> Parto prematuro</p>
+                            </div>
+                        </div>
+                    </div>
+
+                    <!-- Pediculose Púbica -->
+                    <div class="col-lg-6 mb-4">
+                        <div class="card disease-card h-100">
+                            <div class="card-body">
+                                <div class="d-flex justify-content-between align-items-start mb-3">
+                                    <h4 class="card-title">Pediculose Púbica</h4>
+                                    <span class="badge badge-parasitic text-white">Parasitária</span>
+                                </div>
+                                <h6 class="card-subtitle mb-2 text-muted">Pthirus pubis</h6>
+                                <p><strong>Sintomas:</strong></p>
+                                <ul>
+                                    <li>Coceira intensa</li>
+                                    <li>Pontos azulados (picadas)</li>
+                                    <li>Visualização de piolhos</li>
+                                </ul>
+                                <p><strong>Tratamento:</strong> Permetrina, Ivermectina</p>
+                                <p><strong>Prevenção:</strong> Higiene, evitar compartilhamento</p>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <!-- Sinais de Alerta -->
+            <div class="card bg-light">
+                <div class="card-body">
+                    <h3 class="card-title text-primary">
+                        <i class="fas fa-exclamation-triangle me-2"></i>Sinais de Alerta - Procure um Médico se tiver:
+                    </h3>
+                    <div class="symptom-list">
+                        <ul>
+                            <li>Corrimento vaginal/uretral anormal</li>
+                            <li>Feridas ou úlceras genitais</li>
+                            <li>Verrugas genitais</li>
+                            <li>Dor ou ardência ao urinar</li>
+                            <li>Coceira genital persistente</li>
+                            <li>Dor durante relações sexuais</li>
+                            <li>Dor abdominal ou pélvica</li>
+                            <li>Sangramento entre menstruações</li>
+                            <li>Odor genital forte</li>
+                            <li>Ínguas na virilha</li>
+                        </ul>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="py-4">
+        <div class="container">
+            <div class="row">
+                <div class="col-md-6 mb-3">
+                    <h5>Saúde Sexual</h5>
+                    <p>Informação científica, acessível e completa para uma vida sexual saudável, segura e responsável.</p>
+                    <p><em>Este site não substitui aconselhamento médico profissional.</em></p>
+                </div>
+                <div class="col-md-6 mb-3">
+                    <h5>Links Rápidos</h5>
+                    <ul class="list-unstyled">
+                        <li><a href="preservativos.html" class="text-white">Preservativos</a></li>
+                        <li><a href="doencas.html" class="text-white">DSTs</a></li>
+                        <li><a href="ajuda.html" class="text-white">Ajuda</a></li>
+                        <li><a href="vacinas.html" class="text-white">Vacinas</a></li>
+                        <li><a href="consentimento.html" class="text-white">Consentimento</a></li>
+                    </ul>
+                </div>
+            </div>
+            <hr class="my-4 bg-light">
+            <div class="text-center">
+                <p class="mb-0">&copy; 2023 Saúde Sexual - Site Educativo</p>
+            </div>
+        </div>
+    </footer>
+
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/js/bootstrap.bundle.min.js"></script>
+    <script>
+        // Highlight active nav link
+        document.addEventListener('DOMContentLoaded', function() {
+            const currentPage = window.location.pathname.split('/').pop();
+            document.querySelectorAll('.nav-link').forEach(link => {
+                if (link.getAttribute('href') === currentPage) {
+                    link.classList.add('active');
+                } else {
+                    link.classList.remove('active');
+                }
+            });
+        });
+    </script>
+</body>
+</html>
